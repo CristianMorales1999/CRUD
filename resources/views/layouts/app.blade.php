@@ -32,6 +32,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('libros.eliminar') }}">Eliminar</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('libros.consultar') }}">Buscar por ID</a>
+                    </li>
                 </ul>
             </div>
         </div>

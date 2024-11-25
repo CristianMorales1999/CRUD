@@ -79,4 +79,18 @@ class LibrosController extends Controller
         return $pdf->stream('reporte_libros.pdf');
     }
 
+    public function consultar()
+    {
+        return view('libros.consultar');
+    }
+
+    public function generarPdfPorId(Request $request){
+        $libro=Libros::find($request->id);
+        if($libro){
+            $pdf=Pdf::loadView('libros.pdfId',compact('libro'));
+            return $pdf->stream('reporte_libro_id_'.$request->id.'.pdf');
+        }else{
+            return redirect()->back()->with('error','Libro no encontrado');
+        }
+    }
 }

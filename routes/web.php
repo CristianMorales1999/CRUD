@@ -17,3 +17,6 @@ Route::post('/libros/destroy',[LibrosController::class,'destroy'])->name('libros
 
 Route::get('/libros/pdf',[LibrosController::class,'generarPDF'])->name('libros.pdf');
 
+Route::get('/libros/consultar',[LibrosController::class,'consultar'])->name('libros.consultar');
+
+Route::post('/libros/PdfPorId',[LibrosController::class,'generarPdfPorId'])->name('libros.pdfID');
