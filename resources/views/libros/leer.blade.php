@@ -28,6 +28,9 @@
             @endforeach
         </tbody>
     </table>
+    
+    <a href="{{route('libros.pdf')}}" class="btn btn-success" target="_blank">Generar Reporte</a>
+
     @if (session('success'))
         <div class="alert alert-success" role="alert">
             {{ session('success') }}

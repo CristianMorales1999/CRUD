@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Libros;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class LibrosController extends Controller
 {
@@ -68,6 +69,14 @@ class LibrosController extends Controller
         }else{
             return redirect()->back()->with('success','Libro no encontrado.');
         }
+    }
+
+    public function generarPDF()
+    {
+        $libros=Libros::all();
+
+        $pdf=Pdf::loadView('libros.pdf',compact('libros'));
+        return $pdf->stream('reporte_libros.pdf');
     }
 
 }

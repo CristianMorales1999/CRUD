@@ -14,3 +14,6 @@ Route::put('/libros/{libro}',[LibrosController::class,'update'])->name('libros.u
 
 Route::get('/libros/eliminar',[LibrosController::class,'eliminar'])->name('libros.eliminar');
 Route::post('/libros/destroy',[LibrosController::class,'destroy'])->name('libros.destroy');
+
+Route::get('/libros/pdf',[LibrosController::class,'generarPDF'])->name('libros.pdf');
+
